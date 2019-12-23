@@ -28,8 +28,7 @@ const Home = () => {
   const router = useRouter();
 
   const { query } = router;
-  const { song } = query;
-
+  const { song = "apple-tree" } = query;
   const trackInfo = songs[song as string];
 
   if (!trackInfo) {
