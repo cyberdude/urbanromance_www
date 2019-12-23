@@ -14,10 +14,11 @@ const songs: SongsMapType = {
     soundcloudTrackId: "698207227",
     storeLinks: {
       itunes: {
-        url: "http://arnaldocapo.com"
+        url: "https://music.apple.com/us/album/apple-tree-single/1492391333"
       },
       spotify: {
-        url: "http://arnaldocapo.com"
+        url:
+          "https://open.spotify.com/track/2czo0Q6lvbfHqAOnflzs2f?si=zkh6e_MnRyG_in1I4B6g-g"
       }
     }
   }

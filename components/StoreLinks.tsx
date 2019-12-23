@@ -16,7 +16,7 @@ export const StoreLinks = ({ links }: Props) => {
         <StoreImage src="/icons/itunes.svg" /> iTunes
       </StoreAnchor>
 
-      <StoreAnchor className="disabled" href={spotify.url} target="_blank">
+      <StoreAnchor href={spotify.url} target="_blank">
         <StoreImage src="/icons/spotify.svg" /> Spotify
       </StoreAnchor>
     </StoreLinksContainer>
@@ -34,8 +34,10 @@ const StoreAnchor = styled.a({
   fontSize: 20,
   textDecoration: "none",
   justifyContent: "center",
-
-  marginBottom: 10
+  marginBottom: 10,
+  "&:hover": {
+    textDecoration: "underline"
+  }
 });
 
 const StoreImage = styled.img({
