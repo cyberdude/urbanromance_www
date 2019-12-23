@@ -1,3 +1,9 @@
+declare global {
+  interface Window {
+    GA_INITIALIZED: boolean;
+  }
+}
+
 export type SongsMapType = Record<string, Song>;
 export type StoreLinksType = Record<string, StoreLink>;
 

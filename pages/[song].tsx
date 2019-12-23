@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import styled from "styled-components";
@@ -7,6 +7,7 @@ import "../components/global-styles";
 import { GlobalStyles } from "../components/global-styles";
 import { StoreLinks } from "../components/StoreLinks";
 import { SongsMapType } from "../components/types";
+import { initGA } from "../utils/analytics";
 
 const songs: SongsMapType = {
   "apple-tree": {
@@ -27,13 +28,21 @@ const songs: SongsMapType = {
 const Home = () => {
   const router = useRouter();
 
+  useEffect(() => {
+    if (!window.GA_INITIALIZED) {
+      initGA();
+      window.GA_INITIALIZED = true;
+    }
+  });
+
   const { query } = router;
+
+  if (!query && !query.song) {
+    return null;
+  }
+
   const { song = "apple-tree" } = query;
   const trackInfo = songs[song as string];
-
-  if (!trackInfo) {
-    return <div>{"Song not found"}</div>;
-  }
 
   console.info("Loading track", { trackInfo });
 
@@ -41,7 +50,7 @@ const Home = () => {
     <div>
       <Head>
         <title>URBANROMANCE - {trackInfo.label}</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
         <link
           href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap"
           rel="stylesheet"
