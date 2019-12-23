@@ -8,8 +8,15 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/styled-components": "^4.4.1",
     "next": "9.1.6",
     "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react-dom": "16.12.0",
+    "styled-components": "^4.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.21",
+    "@types/react": "^16.9.17",
+    "typescript": "^3.7.4"
   }
 }
