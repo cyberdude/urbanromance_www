@@ -7,7 +7,7 @@ import "../components/global-styles";
 import { GlobalStyles } from "../components/global-styles";
 import { StoreLinks } from "../components/StoreLinks";
 import { SongsMapType } from "../components/types";
-import { initGA } from "../utils/analytics";
+import { initGA, logPageView } from "../utils/analytics";
 
 const songs: SongsMapType = {
   "apple-tree": {
@@ -32,6 +32,8 @@ const Home = () => {
     if (!window.GA_INITIALIZED) {
       initGA();
       window.GA_INITIALIZED = true;
+
+      logPageView();
     }
   });
 
