@@ -20,6 +20,9 @@ const songs: SongsMapType = {
       spotify: {
         url:
           "https://open.spotify.com/track/2czo0Q6lvbfHqAOnflzs2f?si=zkh6e_MnRyG_in1I4B6g-g"
+      },
+      bandcamp: {
+        url: "http://uromance.bandcamp.com/track/apple-tree"
       }
     }
   }

@@ -7,28 +7,36 @@ type Props = {
 };
 
 export const StoreLinks = ({ links }: Props) => {
-  const { itunes, spotify } = links;
+  const { itunes, spotify, bandcamp } = links;
 
   return (
-    <StoreLinksContainer>
-      <h2>Get the music</h2>
-      <StoreAnchor href={itunes.url} target="_blank">
-        <StoreImage src="/icons/itunes.svg" /> iTunes
-      </StoreAnchor>
+    <Container>
+      <Title>Get the music</Title>
+      <Anchor href={itunes.url} target="_blank">
+        <Image src="/icons/itunes.svg" /> <Name>iTunes</Name>
+      </Anchor>
 
-      <StoreAnchor href={spotify.url} target="_blank">
-        <StoreImage src="/icons/spotify.svg" /> Spotify
-      </StoreAnchor>
-    </StoreLinksContainer>
+      <Anchor href={spotify.url} target="_blank">
+        <Image src="/icons/spotify.svg" /> <Name>Spotify</Name>
+      </Anchor>
+
+      <Anchor href={bandcamp.url} target="_blank">
+        <Image src="/icons/bandcamp.svg" /> <Name>Bandcamp</Name>
+      </Anchor>
+    </Container>
   );
 };
 
-const StoreLinksContainer = styled.div({
+const Container = styled.div({
   textAlign: "center",
   width: "100%"
 });
 
-const StoreAnchor = styled.a({
+const Title = styled.h2({
+  textTransform: "uppercase"
+});
+
+const Anchor = styled.a({
   display: "flex",
   alignItems: "center",
   fontSize: 20,
@@ -40,7 +48,12 @@ const StoreAnchor = styled.a({
   }
 });
 
-const StoreImage = styled.img({
+const Image = styled.img({
   width: 40,
-  marginRight: 5
+  marginRight: 14
+});
+
+const Name = styled.div({
+  width: 99,
+  textAlign: "left"
 });
