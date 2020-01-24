@@ -55,10 +55,16 @@ const Home = () => {
     <div>
       <Head>
         <title>URBANROMANCE - {trackInfo.label}</title>
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/urbanromance-squared.jpg" />
         <link
           href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap"
           rel="stylesheet"
+        />
+
+        <meta property="og:image" content="/urbanromance-squared.jpg" />
+        <meta
+          property="og:description"
+          content="Electronic live duo based in Berlin originating from opposite sides of earth, Puerto Rico and Kazakhstan. Not only the lyrics reflects the emotional rollercoaster of a big city romantic nuances but also contains the mix of jazz elements, synth 80's sounds and down tempo rhythmic flows with the end inviting you to immerse yourself into a rich spherical space of sound scapes."
         />
       </Head>
       <GlobalStyles />
@@ -90,8 +96,9 @@ const Content = styled.div({
 });
 
 const Title = styled.h1({
-  textTransform: "uppercase"
+  fontSize: 22
 });
+
 const SouncloudPlayer = styled.iframe({
   border: "none"
 });

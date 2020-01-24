@@ -11,7 +11,6 @@ export const StoreLinks = ({ links }: Props) => {
 
   return (
     <Container>
-      <Title>Get the music</Title>
       <Anchor href={itunes.url} target="_blank">
         <Image src="/icons/itunes.svg" /> <Name>iTunes</Name>
       </Anchor>
@@ -29,11 +28,8 @@ export const StoreLinks = ({ links }: Props) => {
 
 const Container = styled.div({
   textAlign: "center",
-  width: "100%"
-});
-
-const Title = styled.h2({
-  textTransform: "uppercase"
+  width: "100%",
+  marginTop: 15
 });
 
 const Anchor = styled.a({
