@@ -55,7 +55,10 @@ const Home = () => {
     <div>
       <Head>
         <title>URBANROMANCE - {trackInfo.label}</title>
-        <link rel="icon" href="/urbanromance-squared.jpg" />
+        <link
+          rel="icon"
+          href="https://urbanromance.band/urbanromance-squared.jpg"
+        />
         <link
           href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap"
           rel="stylesheet"
