@@ -7,6 +7,10 @@ type Props = {
 };
 
 export const StoreLinks = ({ links }: Props) => {
+  if (!links) {
+    return null;
+  }
+
   const { itunes, spotify, bandcamp } = links;
 
   return (

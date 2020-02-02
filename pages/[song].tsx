@@ -25,6 +25,11 @@ const songs: SongsMapType = {
         url: "http://uromance.bandcamp.com/track/apple-tree"
       }
     }
+  },
+  unglorified: {
+    label: "Unglorified",
+    soundcloudTrackId: "753360598",
+    storeLinks: null
   }
 };
 

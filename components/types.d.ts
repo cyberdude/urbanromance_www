@@ -10,7 +10,7 @@ export type StoreLinksType = Record<string, StoreLink>;
 export type Song = {
   label: string;
   soundcloudTrackId: string;
-  storeLinks: StoreLinksType;
+  storeLinks: StoreLinksType | null;
 };
 
 export type StoreLink = {
