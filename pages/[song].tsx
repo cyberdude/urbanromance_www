@@ -2,9 +2,8 @@ import React, { useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import { Logo } from "../components/Logo";
-import "../components/global-styles";
-import { GlobalStyles } from "../components/global-styles";
+// import { Logo } from "../components/Logo";
+import { GlobalStyles, ContentHolder } from "../components/global-styles";
 import { StoreLinks } from "../components/StoreLinks";
 import { SongsMapType } from "../components/types";
 import { initGA, logPageView } from "../utils/analytics";
@@ -15,22 +14,38 @@ const songs: SongsMapType = {
     soundcloudTrackId: "698207227",
     storeLinks: {
       itunes: {
-        url: "https://music.apple.com/us/album/apple-tree-single/1492391333"
+        url: "https://music.apple.com/us/album/apple-tree-single/1492391333",
       },
       spotify: {
         url:
-          "https://open.spotify.com/track/2czo0Q6lvbfHqAOnflzs2f?si=zkh6e_MnRyG_in1I4B6g-g"
+          "https://open.spotify.com/track/2czo0Q6lvbfHqAOnflzs2f?si=zkh6e_MnRyG_in1I4B6g-g",
       },
       bandcamp: {
-        url: "http://uromance.bandcamp.com/track/apple-tree"
-      }
-    }
+        url: "http://uromance.bandcamp.com/track/apple-tree",
+      },
+    },
   },
   unglorified: {
     label: "Unglorified",
     soundcloudTrackId: "753360598",
-    storeLinks: null
-  }
+    storeLinks: null,
+  },
+  feel: {
+    label: "Feel",
+    soundcloudTrackId: "773628301",
+    storeLinks: {
+      itunes: {
+        url: "https://music.apple.com/us/album/feel-single/1509944762",
+      },
+      spotify: {
+        url:
+          "https://open.spotify.com/album/6diye3M5genAiOODkEXaO9?si=uVlKZ6_RRVyCjLHwB_qhTA",
+      },
+      bandcamp: {
+        url: "https://uromance.bandcamp.com/track/feel",
+      },
+    },
+  },
 };
 
 const Home = () => {
@@ -60,26 +75,11 @@ const Home = () => {
     <div>
       <Head>
         <title>URBANROMANCE - {trackInfo.label}</title>
-        <link
-          rel="icon"
-          href="https://urbanromance.band/urbanromance-squared.jpg"
-        />
-        <link
-          href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap"
-          rel="stylesheet"
-        />
-
-        <meta property="og:image" content="/urbanromance-squared.jpg" />
-        <meta
-          property="og:description"
-          content="Electronic live duo based in Berlin originating from opposite sides of earth, Puerto Rico and Kazakhstan. Not only the lyrics reflects the emotional rollercoaster of a big city romantic nuances but also contains the mix of jazz elements, synth 80's sounds and down tempo rhythmic flows with the end inviting you to immerse yourself into a rich spherical space of sound scapes."
-        />
       </Head>
       <GlobalStyles />
 
-      <Content>
+      <ContentHolder>
         <div>
-          <Logo />
           <Title>{trackInfo.label}</Title>
           <SouncloudPlayer
             width="550"
@@ -90,25 +90,17 @@ const Home = () => {
           />
           <StoreLinks links={trackInfo.storeLinks} />
         </div>
-      </Content>
+      </ContentHolder>
     </div>
   );
 };
 
-const Content = styled.div({
-  justifyContent: "center",
-  alignContent: "center",
-  width: "100%",
-  display: "flex",
-  textAlign: "center"
-});
-
 const Title = styled.h1({
-  fontSize: 22
+  fontSize: 22,
 });
 
 const SouncloudPlayer = styled.iframe({
-  border: "none"
+  border: "none",
 });
 
 export default Home;

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`  
 @font-face {
@@ -19,3 +19,11 @@ body {
   opacity: .2
 }
 `;
+
+export const ContentHolder = styled.div({
+  justifyContent: "center",
+  alignContent: "center",
+  width: "100%",
+  display: "flex",
+  textAlign: "center",
+});

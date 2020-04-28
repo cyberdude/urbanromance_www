@@ -15,16 +15,16 @@ export const StoreLinks = ({ links }: Props) => {
 
   return (
     <Container>
-      <Anchor href={itunes.url} target="_blank">
-        <Image src="/icons/itunes.svg" /> <Name>iTunes</Name>
-      </Anchor>
-
       <Anchor href={spotify.url} target="_blank">
         <Image src="/icons/spotify.svg" /> <Name>Spotify</Name>
       </Anchor>
 
       <Anchor href={bandcamp.url} target="_blank">
         <Image src="/icons/bandcamp.svg" /> <Name>Bandcamp</Name>
+      </Anchor>
+
+      <Anchor href={itunes.url} target="_blank">
+        <Image src="/icons/itunes.svg" /> <Name>iTunes</Name>
       </Anchor>
     </Container>
   );
@@ -33,7 +33,7 @@ export const StoreLinks = ({ links }: Props) => {
 const Container = styled.div({
   textAlign: "center",
   width: "100%",
-  marginTop: 15
+  marginTop: 15,
 });
 
 const Anchor = styled.a({
@@ -44,16 +44,16 @@ const Anchor = styled.a({
   justifyContent: "center",
   marginBottom: 10,
   "&:hover": {
-    textDecoration: "underline"
-  }
+    textDecoration: "underline",
+  },
 });
 
 const Image = styled.img({
   width: 40,
-  marginRight: 14
+  marginRight: 14,
 });
 
 const Name = styled.div({
   width: 99,
-  textAlign: "left"
+  textAlign: "left",
 });
