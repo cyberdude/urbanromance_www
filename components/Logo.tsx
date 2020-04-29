@@ -4,7 +4,9 @@ import Link from "next/link";
 
 export const Logo = () => (
   <Link href="/">
-    <LogoImg src="/URBANROMANCE-LOGO.png" />
+    <div>
+      <LogoImg src="/URBANROMANCE-LOGO.png" />
+    </div>
   </Link>
 );
 
