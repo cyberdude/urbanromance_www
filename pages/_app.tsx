@@ -2,7 +2,6 @@ import Head from "next/head";
 import "../components/global-styles";
 import { GlobalStyles, ContentHolder } from "../components/global-styles";
 import { Logo } from "../components/Logo";
-import { SocialMediaLinks } from "../components/SocialMediaLinks";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -33,8 +32,6 @@ export default function App({ Component, pageProps }) {
       </ContentHolder>
 
       <Component {...pageProps} />
-
-      <SocialMediaLinks />
     </>
   );
 }

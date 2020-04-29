@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { SocialMediaLinks } from "../components/SocialMediaLinks";
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
           scrolling="no"
           allowFullScreen={true}
         />
+        <SocialMediaLinks />
       </ContentWrapper>
     </Container>
   );
